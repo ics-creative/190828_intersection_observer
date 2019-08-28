@@ -236,12 +236,12 @@
       const boxes = document.querySelectorAll(".box");
 
       const options = {
-        root: null, // 今回はビューポートをroot要素とする
-        rootMargin: "0px", // root要素からのマージンはなし（意図せぬ挙動）
+        root: null, // 今回はビューポートをルート要素とする
+        rootMargin: "0px", // ルート要素からのマージンはなし（意図せぬ挙動）
         threshold: 0 // 閾値は0
       };
       const observer = new IntersectionObserver(doWhenIntersect, options);
-      // それぞれのboxに監視を適用する
+      // それぞれのboxを監視させる
       boxes.forEach(box => {
         observer.observe(box);
       });
