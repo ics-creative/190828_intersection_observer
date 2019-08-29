@@ -130,6 +130,7 @@
       });
 
       const boxes = document.querySelectorAll(".box");
+      const boxesArray = Array.prototype.slice.call(boxes, 0);
 
       const options = {
         root: null,
@@ -137,7 +138,7 @@
         threshold: 0
       };
       const observer = new IntersectionObserver(doWhenIntersect, options);
-      boxes.forEach(box => {
+      boxesArray.forEach(function(box) {
         observer.observe(box);
       });
 
@@ -146,11 +147,12 @@
        * @param entries
        */
       function doWhenIntersect(entries) {
-        for (let entry of entries) {
+        const entriesArray = Array.prototype.slice.call(entries, 0);
+        entriesArray.forEach(function(entry) {
           if (entry.isIntersecting) {
             entry.target.classList.add("show");
           }
-        }
+        });
       }
     </script>
   </body>
