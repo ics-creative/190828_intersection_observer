@@ -125,7 +125,7 @@
     <script>
       window.addEventListener("scroll", function(e) {
         console.log(
-          `スクロールイベントが呼ばれました。スクロール量${e.pageY}px`
+          "スクロールイベントが呼ばれました。スクロール量" + e.pageY + "px"
         );
       });
 
@@ -146,7 +146,7 @@
        * @param entries
        */
       function doWhenIntersect(entries) {
-        for (let entry of entries){
+        for (let entry of entries) {
           if (entry.isIntersecting) {
             entry.target.classList.add("show");
           }
