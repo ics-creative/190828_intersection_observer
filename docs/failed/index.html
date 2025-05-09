@@ -4,9 +4,8 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+      content="width=device-width, uinitial-scale=1.0"
     />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>【失敗】Intersection Observer デモ</title>
     <style>
       html {
@@ -247,7 +246,8 @@
 
       /**
        * 交差したときに呼び出す関数
-       * @param entries
+       * @param entries 
+       * @type {IntersectionObserverEntry[]}
        */
       function doWhenIntersect(entries) {
         // 交差検知をしたもののなかで、isIntersectingがtrueのDOMを色を変える関数に渡す
@@ -262,6 +262,7 @@
       /**
        * 目次の色を変える関数
        * @param element
+       * @type {HTMLElement}
        */
       function activateIndex(element) {
         // すでにアクティブになっている目次を選択
